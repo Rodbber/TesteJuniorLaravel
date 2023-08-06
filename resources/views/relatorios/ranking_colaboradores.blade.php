@@ -29,7 +29,7 @@
             <td>{{ $value->colaborador->nome }}</td>
             <td>{{ $value->colaborador->cpf }}</td>
             <td>{{ $value->colaborador->email }}</td>
-            <td>{{ $value->colaborador->unidade->nome }}</td>
+            <td>{{ $value->colaborador->unidade->nome_fantasia }}</td>
             <td>{{ $value->cargo->cargo }}</td>
             <td>{{ $value->nota_desempenho }}</td>
         </tr>

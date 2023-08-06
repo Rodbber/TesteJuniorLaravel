@@ -44,7 +44,7 @@
               {{ data.cpf }}
             </td>
             <td>
-              {{ data.unidade.nome }}
+              {{ data.unidade.nome_fantasia }}
             </td>
             <td>
               {{ data.cargo.cargo }}

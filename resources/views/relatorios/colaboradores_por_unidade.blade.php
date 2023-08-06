@@ -20,7 +20,7 @@
 @section('body-table')
     @foreach ($data as $value)
         <tr style="font-size: 10pt;">
-            <td>{{ $value->nome }}</td>
+            <td>{{ $value->nome_fantasia }}</td>
             <td>{{ $value->razao_social }}</td>
             <td>{{ $value->cnpj }}</td>
             <td>{{ $value->colaboradores_count }}</td>

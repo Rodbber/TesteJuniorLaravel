@@ -10,8 +10,10 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class ColaboradorController extends Controller
 {
-    public function index(){
-        $colaborador = Colaborador::with('unidade:id,nome', 'cargo')->orderByDesc('id')->get();
+
+    public function index()
+    {
+        $colaborador = Colaborador::with('unidade:id,nome_fantasia', 'cargo')->orderByDesc('id')->get();
         return response()->json($colaborador);
     }
 
@@ -24,19 +26,19 @@ class ColaboradorController extends Controller
                 'cpf' => 'required|numeric|digits_between:11,11',
                 'email' => 'required|email',
             ], [
-                'unidade_id' => 'Vinculo não encontrado',
-                'nome' => 'nome não encontrado',
+                'unidade_id.required' => 'Vinculo não encontrado',
+                'nome.required' => 'nome não encontrado',
                 'cpf.required' => 'cpf não encontrado',
                 'cpf.digits_between' => 'cpf tem 11 digitos',
-                'email' => 'email não encontrado',
+                'email.required' => 'email não encontrado',
             ]);
 
             $validate_cargo = Validator::make($request->all(), [
                 'cargo_id' => 'required|numeric',
                 'nota_desempenho' => 'required|numeric',
             ], [
-                'cargo_id' => 'cargo_id não encontrado',
-                'nota_desempenho' => 'nota_desempenho não encontrado',
+                'cargo_id.required' => 'cargo_id não encontrado',
+                'nota_desempenho.required' => 'nota_desempenho não encontrado',
             ]);
 
             if ($validate->fails()) {
@@ -56,7 +58,7 @@ class ColaboradorController extends Controller
 
             CargoColaborador::create($data_cargo_colaborador);
 
-            $colaborador = Colaborador::with(['unidade:id,nome', 'cargo' => function ($q) {
+            $colaborador = Colaborador::with(['unidade:id,nome_fantasia', 'cargo' => function ($q) {
                 $q->with('cargo:id,cargo')->select('colaborador_id', 'cargo_id', 'nota_desempenho');
             }])->find($create->id);
 
@@ -68,18 +70,17 @@ class ColaboradorController extends Controller
 
     public function relatorio()
     {
-        $colaborador = Colaborador::with(['unidade:id,nome', 'cargo'])->get();
+        $colaborador = Colaborador::with(['unidade:id,nome_fantasia', 'cargo'])->get();
 
         $pdf = Pdf::loadView('relatorios.colaboradores', ['data' => $colaborador]);
         return $pdf->download('Colaboradores.pdf');
     }
 
-    public function ranking(){
-        $ranking = CargoColaborador::with(['colaborador.unidade','cargo'])->orderByDesc('nota_desempenho')->get();
+    public function ranking()
+    {
+        $ranking = CargoColaborador::with(['colaborador.unidade', 'cargo'])->orderByDesc('nota_desempenho')->get();
 
         $pdf = Pdf::loadView('relatorios.ranking_colaboradores', ['data' => $ranking]);
         return $pdf->download('Colaboradores - Ranking.pdf', ['Attachment' => false]);
     }
-
-
 }

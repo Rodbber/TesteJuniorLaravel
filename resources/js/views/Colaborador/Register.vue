@@ -166,7 +166,7 @@ export default {
         .get("/unidades")
         .then((r) => {
           this.unidades = r.data.map((v) => {
-            return { value: v.id, text: v.nome };
+            return { value: v.id, text: v.nome_fantasia };
           });
         })
         .catch((e) => {

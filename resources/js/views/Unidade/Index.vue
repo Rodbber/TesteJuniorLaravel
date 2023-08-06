@@ -29,7 +29,7 @@
         <tbody class="block h-[50vh] overflow-auto">
           <tr v-for="data in dataTable" :key="data.id" class="text-center">
             <td>
-              {{ data.nome }}
+              {{ data.nome_fantasia }}
             </td>
             <td>
               {{ data.razao_social }}

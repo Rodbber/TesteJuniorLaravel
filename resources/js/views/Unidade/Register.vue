@@ -30,7 +30,7 @@
               >Nome fantasia*</label
             >
             <input
-              v-model="form.nome"
+              v-model="form.nome_fantasia"
               name="company"
               class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
             />
@@ -89,7 +89,7 @@ export default {
   methods: {
     formClean() {
       return {
-        nome: null,
+        nome_fantasia: null,
         razao_social: null,
         cnpj: null,
       };

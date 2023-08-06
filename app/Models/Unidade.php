@@ -10,7 +10,7 @@ class Unidade extends Model
     use HasFactory;
 
 
-    protected $fillable = ['nome', 'razao_social', 'cnpj'];
+    protected $fillable = ['nome_fantasia', 'razao_social', 'cnpj'];
 
     public function colaboradores(){
         return $this->hasMany(Colaborador::class, 'unidade_id');

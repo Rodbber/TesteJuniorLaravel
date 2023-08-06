@@ -17,7 +17,7 @@ class UnidadeFactory extends Factory
     {
         $faker = \Faker\Factory::create('pt_BR');
         return [
-            'nome' => $faker->company(),
+            'nome_fantasia' => $faker->company(),
             'razao_social' => $faker->company(),
             'cnpj' => $faker->unique()->cnpj(false),
         ];

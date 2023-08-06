@@ -6,6 +6,8 @@ use App\Models\Unidade;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
+
+
 class UnidadeController extends Controller
 {
     public function index(){
@@ -16,13 +18,13 @@ class UnidadeController extends Controller
 
     public function create(Request $request){
         $validate = $request->validate([
-            'nome' => 'required|string',
+            'nome_fantasia' => 'required|string',
             'razao_social' => 'required|string',
             'cnpj' => 'required|string',
         ], [
-            'nome' => 'O nome é requerido',
-            'nome' => 'A razao_social é requerido',
-            'nome' => 'O cnpj é requerido',
+            'nome_fantasia.required' => 'O nome é requerido',
+            'razao_social.required' => 'A razao_social é requerido',
+            'cnpj.required' => 'O cnpj é requerido',
         ]);
 
         try {
