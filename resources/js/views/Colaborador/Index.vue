@@ -4,20 +4,20 @@
       <div class="text-center">
         <h1>Colaboradores - {{ dataTable.length }}</h1>
       </div>
-      <div class="flex justify-end">
+      <div class="flex justify-between">
         <div>
-            <a
+          <a
             href="/relatorio/colaborador"
-          class="h-8 px-5 m-2 text-black transition-colors duration-150 bg-white border-2 border-red-500 rounded-lg focus:shadow-outline hover:bg-red-100"
-        >
-          Relatorio
-        </a>
-        <a
+            class="h-8 px-5 m-2 text-black transition-colors duration-150 bg-white border-2 border-red-500 rounded-lg focus:shadow-outline hover:bg-red-100"
+          >
+            Relatorio
+          </a>
+          <a
             href="/relatorio/colaborador/ranking"
-          class="h-8 px-5 m-2 text-black transition-colors duration-150 bg-white border-2 border-red-500 rounded-lg focus:shadow-outline hover:bg-red-100"
-        >
-          Ranking
-        </a>
+            class="h-8 px-5 m-2 text-black transition-colors duration-150 bg-white border-2 border-red-500 rounded-lg focus:shadow-outline hover:bg-red-100"
+          >
+            Ranking
+          </a>
         </div>
         <button
           class="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800"

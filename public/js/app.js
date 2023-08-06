@@ -19468,7 +19468,7 @@ var _hoisted_2 = {
   "class": "text-center"
 };
 var _hoisted_3 = {
-  "class": "flex justify-end"
+  "class": "flex justify-between"
 };
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "/relatorio/colaborador",
