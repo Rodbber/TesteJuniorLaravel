@@ -8,9 +8,14 @@ Comand: php artisan migrate --seed || php artisan migrate:fresh --seed // para e
 ### Front end
 Comand: npm install && npm run dev
 
-### APIs
+### Relatorios
+na web
 
-### auth
+/relatorio/colaborador
+/relatorio/ranking
+/relatorio/unidade/quantidade-colaborador
+
+### APIs
 
 #### Nova Unidade
 
