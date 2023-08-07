@@ -11,9 +11,9 @@ Comand: npm install && npm run dev
 ### Relatorios
 na web
 
-/relatorio/colaborador
-/relatorio/ranking
-/relatorio/unidade/quantidade-colaborador
+/relatorio/colaborador <br>
+/relatorio/ranking <br>
+/relatorio/unidade/quantidade-colaborador <br>
 
 ### APIs
 
